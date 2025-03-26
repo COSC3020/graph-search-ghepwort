@@ -5,9 +5,9 @@ function depthFirstSearch(graph, currentNode, targetNode, visited = new Set()) {
 
     visited.add(currentNode);
 
-    for (let neighbor of graph[currentNode] || []) {
+    for (neighbor of graph[currentNode] || []) {
         if (!visited.has(neighbor)) {
-            const path = depthFirstSearch(graph, neighbor, targetNode, visited);
+            path = depthFirstSearch(graph, neighbor, targetNode, visited);
             if (path.length > 0) {
                 return [currentNode, ...path]; // Look at that, obscure JavaScript things ARE helpful!
             }

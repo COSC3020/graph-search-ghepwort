@@ -30,15 +30,26 @@ assert.deepStrictEqual(depthFirstSearch([[1], [0]], 1, 0), [1, 0]);
 
 
 
-
 // ----- Large Tests ----- //
 
-graph = [[1, 2, 3], [2], [3], []];
+graph = [
+    [1, 2, 3], 
+    [2], 
+    [3], 
+    []
+];
 assert.deepStrictEqual(depthFirstSearch(graph, 0, 3), [0, 1, 2, 3]);
 assert.deepStrictEqual(depthFirstSearch(graph, 0, 0), [0]);
 assert.deepStrictEqual(depthFirstSearch(graph, 3, 0), []);
 
-graph = [[3], [], [0, 5], [], [], [1]];
+graph = [
+    [3], 
+    [], 
+    [0, 5], 
+    [], 
+    [], 
+    [1]
+];
 assert.deepStrictEqual(depthFirstSearch(graph, 3, 0), []);
 assert.deepStrictEqual(depthFirstSearch(graph, 0, 3), [0, 3]);
 assert.deepStrictEqual(depthFirstSearch(graph, 4, 0), []);
@@ -52,7 +63,14 @@ assert.deepStrictEqual(depthFirstSearch(graph, 2, 3), [2, 0, 3]);
 assert.deepStrictEqual(depthFirstSearch(graph, 3, 2), []);
 assert.deepStrictEqual(depthFirstSearch(graph, 3, 5), []);
 
-graph = [[0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5]];
+graph = [
+    [0, 1, 2, 3, 4, 5], 
+    [0, 1, 2, 3, 4, 5], 
+    [0, 1, 2, 3, 4, 5], 
+    [0, 1, 2, 3, 4, 5], 
+    [0, 1, 2, 3, 4, 5], 
+    [0, 1, 2, 3, 4, 5]
+];
 assert.deepStrictEqual(depthFirstSearch(graph, 1, 1), [1]);
 assert.deepStrictEqual(depthFirstSearch(graph, 1, 2), [1, 0, 2]);
 assert.deepStrictEqual(depthFirstSearch(graph, 1, 3), [1, 0, 2, 3]);

@@ -33,3 +33,9 @@ Implement and analyze breadth-first search.
 ## Answers
 
 This algorithm has a worst-case complexity of $\Theta(|V| + |E|)$. In the worst case we would end up looping through every neighbor during the for loop which we get by searching all the edges. During the for loop we check if we have visited a vertex or not and if not we check it. This means we would end up visiting every vertex eventually giving us the worst-case complexity of \Theta(|V| + |E|)$.
+
+## Sources
+
+I used ChatGPT to attempt to write test code. I learned I am infact incapable of writing property based testing so I gave up and wrote my own testing code that uses specific graphs and hand computed the correct solutions.
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
