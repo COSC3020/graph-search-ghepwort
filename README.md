@@ -29,3 +29,7 @@ answer, including your reasoning, to this markdown file.
 ## Bonus
 
 Implement and analyze breadth-first search.
+
+## Answers
+
+This algorithm has a worst-case complexity of $\Theta(|V| + |E|)$. In the worst case we would end up looping through every neighbor during the for loop which we get by searching all the edges. During the for loop we check if we have visited a vertex or not and if not we check it. This means we would end up visiting every vertex eventually giving us the worst-case complexity of \Theta(|V| + |E|)$.

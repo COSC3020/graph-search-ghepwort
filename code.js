@@ -1,48 +1,18 @@
-function depthFirstSearch(graph, startNode, targetNode) {
+function depthFirstSearch(graph, currentNode, targetNode, visited = new Set()) {
+    if (!(currentNode in graph)) return [];  // Ensure the node exists in the graph
 
-    // Generate an array of visited node, defaulted to false
-    const visited = new Array;
-    for (node in graph.length)
-        visited[node] = false;
+    if (currentNode === targetNode) return [currentNode]; // Base-ish case
 
+    visited.add(currentNode);
 
-    // Helper function to do the recursion
-    function depthFirstSearch2(currentNode) {
-        // Base Case: We found the target node!
-        if (currentNode === targetNode) {
-            return [currentNode];
-        }
-
-        // Mark the current node as visited
-        visited[currentNode] = true;
-
-
-        // Iterate through the neighbors
-        for (neighbor of graph[currentNode]) {
-            // Go in only if we haven't visisted
-            if (!visited[neighbor]) {
-
-                const path = depthFirstSearch2(neighbor);
-                if (path.length > 0) {
-                    return [currentNode, ...path];
-                }
-
+    for (let neighbor of graph[currentNode] || []) {
+        if (!visited.has(neighbor)) {
+            const path = depthFirstSearch(graph, neighbor, targetNode, visited);
+            if (path.length > 0) {
+                return [currentNode, ...path]; // Look at that, obscure JavaScript things ARE helpful!
             }
-
         }
-
-        return [];
     }
 
-    return depthFirstSearch2(startNode);
-
+    return [];
 }
-
-const graph = [
-    [1, 2, 3],
-    [2],
-    [3],
-    []
-]
-
-console.log(depthFirstSearch(graph, 0, 3));
